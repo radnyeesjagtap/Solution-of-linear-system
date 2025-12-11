@@ -1,364 +1,644 @@
-    :root {
-        --primary-color: #2d3e50;
-        --secondary-color: #3498db;
-        --accent-color: #e74c3c;
-        --light-color: #f8f9fa;
-        --dark-color: #343a40;
-        --success-color: #28a745;
-        --warning-color: #ffc107;
-        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        --border-radius: 8px;
-    }
-    
-    body {
-        background-color: #f5f7fa;
-        color: var(--dark-color);
-        line-height: 1.6;
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    /* Header Styles */
-    header {
-        background: linear-gradient(135deg, var(--primary-color), #1a2530);
-        color: white;
-        padding: 2rem 0;
-        box-shadow: var(--shadow);
-    }
-    
-    .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .logo i {
-        font-size: 2.5rem;
-        color: var(--secondary-color);
-    }
-    
-    .logo h1 {
-        font-size: 2.2rem;
-        font-weight: 700;
-    }
-    
-    .logo span {
-        color: var(--secondary-color);
-    }
-    
-    .github-link {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background-color: var(--secondary-color);
-        color: white;
-        padding: 12px 24px;
-        border-radius: var(--border-radius);
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-    
-    .github-link:hover {
-        background-color: #2980b9;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    
-    /* Main Content */
-    main {
-        padding: 3rem 0;
-    }
-    
-    .intro-section {
-        text-align: center;
-        margin-bottom: 3rem;
-    }
-    
-    .intro-section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: var(--primary-color);
-    }
-    
-    .intro-section p {
-        font-size: 1.2rem;
-        max-width: 800px;
-        margin: 0 auto 2rem;
-        color: #555;
-    }
-    
-    .content-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2.5rem;
-    }
-    
-    @media (max-width: 992px) {
-        .content-wrapper {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    /* Solver Section */
-    .solver-section {
-        background-color: white;
-        border-radius: var(--border-radius);
-        padding: 2rem;
-        box-shadow: var(--shadow);
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 3px solid var(--secondary-color);
-    }
-    
-    .matrix-input {
-        margin-bottom: 1.5rem;
-    }
-    
-    .matrix-size-selector {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        margin-bottom: 1.5rem;
-    }
-    
-    .matrix-size-selector label {
-        font-weight: 600;
-    }
-    
-    .size-input {
-        width: 70px;
-        padding: 8px 12px;
-        border: 2px solid #ddd;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        text-align: center;
-    }
-    
-    .matrix-grid {
-        display: grid;
-        gap: 10px;
-        margin-bottom: 1.5rem;
-    }
-    
-    .matrix-row {
-        display: flex;
-        gap: 10px;
-    }
-    
-    .matrix-cell {
-        flex: 1;
-        padding: 12px;
-        border: 2px solid #e1e5eb;
-        border-radius: var(--border-radius);
-        text-align: center;
-        font-size: 1rem;
-        transition: border-color 0.3s;
-    }
-    
-    .matrix-cell:focus {
-        border-color: var(--secondary-color);
-        outline: none;
-    }
-    
-    .matrix-separator {
-        text-align: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: var(--accent-color);
-        margin: 0 10px;
-    }
-    
-    .buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-    
-    .btn {
-        padding: 12px 24px;
-        border: none;
-        border-radius: var(--border-radius);
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-    }
-    
-    .btn-primary {
-        background-color: var(--secondary-color);
-        color: white;
-    }
-    
-    .btn-primary:hover {
-        background-color: #2980b9;
-    }
-    
-    .btn-secondary {
-        background-color: #6c757d;
-        color: white;
-    }
-    
-    .btn-secondary:hover {
-        background-color: #5a6268;
-    }
-    
-    .btn-success {
-        background-color: var(--success-color);
-        color: white;
-    }
-    
-    .btn-success:hover {
-        background-color: #218838;
-    }
-    
-    .results {
-        margin-top: 2rem;
-        padding: 1.5rem;
-        background-color: #f8f9fa;
-        border-radius: var(--border-radius);
-        border-left: 5px solid var(--secondary-color);
-    }
-    
-    .results h3 {
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-    }
-    
-    .solution {
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-    
-    .solution span {
-        font-weight: 600;
-        color: var(--accent-color);
-    }
-    
-    /* Documentation Section */
-    .documentation-section {
-        background-color: white;
-        border-radius: var(--border-radius);
-        padding: 2rem;
-        box-shadow: var(--shadow);
-    }
-    
-    .method {
-        margin-bottom: 2rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid #eee;
-    }
-    
-    .method h3 {
-        color: var(--primary-color);
-        margin-bottom: 0.5rem;
-    }
-    
-    .method p {
-        color: #555;
-        margin-bottom: 0.5rem;
-    }
-    
-    .code-block {
-        background-color: #2d3e50;
-        color: #ecf0f1;
-        padding: 1.5rem;
-        border-radius: var(--border-radius);
-        font-family: 'Courier New', monospace;
-        overflow-x: auto;
-        margin-top: 1rem;
-    }
-    
-    .features-list {
-        list-style-type: none;
-        margin-top: 1.5rem;
-    }
-    
-    .features-list li {
-        padding: 0.5rem 0;
-        padding-left: 2rem;
-        position: relative;
-    }
-    
-    .features-list li:before {
-        content: "✓";
-        color: var(--success-color);
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-    
-    /* Footer */
-    footer {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-        margin-top: 3rem;
-    }
-    
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-    
-    .footer-links {
-        display: flex;
-        gap: 20px;
-    }
-    
-    .footer-links a {
-        color: #ddd;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-    
-    .footer-links a:hover {
-        color: var(--secondary-color);
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .header-content {
-            flex-direction: column;
-            gap: 20px;
-            text-align: center;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Equations Solver</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
-        .matrix-size-selector {
-            flex-direction: column;
-            align-items: flex-start;
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+        
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .input-section, .solution-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            color: #2c3e50;
+        }
+        
+        .section-title i {
+            color: #3498db;
+        }
+        
+        .equation-inputs {
+            margin-bottom: 25px;
+        }
+        
+        .equation-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .equation-row:hover {
+            background-color: #f0f7ff;
+        }
+        
+        .equation-input {
+            width: 60px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .equation-input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .variable {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .equals {
+            font-weight: bold;
+            color: #2c3e50;
         }
         
         .buttons {
-            flex-direction: column;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
         
-        .footer-content {
-            flex-direction: column;
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
         }
-    }
-</style>
+        
+        .solve-btn {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .solve-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .add-btn {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .add-btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+        
+        .remove-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .remove-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .clear-btn {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .clear-btn:hover {
+            background-color: #d68910;
+            transform: translateY(-2px);
+        }
+        
+        .solution-container {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .solution-type {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .unique-solution {
+            background-color: #d5f4e6;
+            color: #27ae60;
+            border-left: 5px solid #27ae60;
+        }
+        
+        .infinite-solutions {
+            background-color: #fef9e7;
+            color: #f39c12;
+            border-left: 5px solid #f39c12;
+        }
+        
+        .no-solution {
+            background-color: #fdeaea;
+            color: #e74c3c;
+            border-left: 5px solid #e74c3c;
+        }
+        
+        .solutions-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .solution-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+        
+        .solution-item .variable {
+            margin-right: 8px;
+            min-width: 30px;
+        }
+        
+        .instructions {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        
+        .instructions code {
+            background-color: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            background-color: #fdeaea;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: none;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .buttons {
+                justify-content: center;
+            }
+            
+            button {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-calculator"></i> Linear Equations Solver</h1>
+            <p class="subtitle">Solve systems of linear equations with step-by-step solutions</p>
+        </header>
+        
+        <div class="app-container">
+            <section class="input-section">
+                <h2 class="section-title"><i class="fas fa-edit"></i> Input Equations</h2>
+                
+                <div class="equation-inputs" id="equationInputs">
+                    <!-- Equations will be added here dynamically -->
+                </div>
+                
+                <div class="buttons">
+                    <button class="add-btn" id="addEquation">
+                        <i class="fas fa-plus-circle"></i> Add Equation
+                    </button>
+                    <button class="remove-btn" id="removeEquation">
+                        <i class="fas fa-minus-circle"></i> Remove Equation
+                    </button>
+                    <button class="solve-btn" id="solveBtn">
+                        <i class="fas fa-play"></i> Solve System
+                    </button>
+                    <button class="clear-btn" id="clearBtn">
+                        <i class="fas fa-eraser"></i> Clear All
+                    </button>
+                </div>
+                
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-triangle"></i> <span id="errorText"></span>
+                </div>
+            </section>
+            
+            <section class="solution-section">
+                <h2 class="section-title"><i class="fas fa-clipboard-check"></i> Solution</h2>
+                
+                <div class="solution-container" id="solutionContainer">
+                    <div class="solution-type" id="solutionType"></div>
+                    
+                    <div class="solutions-list" id="solutionsList">
+                        <!-- Solutions will be displayed here -->
+                    </div>
+                </div>
+                
+                <div id="noSolutionMessage">
+                    <p style="text-align: center; color: #7f8c8d; padding: 20px;">
+                        Enter your equations and click "Solve System" to see the solution here.
+                    </p>
+                </div>
+            </section>
+        </div>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+            <ul>
+                <li>Enter coefficients for each variable in the equations (use 0 for variables not present).</li>
+                <li>Click <b>"Add Equation"</b> to add more equations to the system.</li>
+                <li>Click <b>"Remove Equation"</b> to remove the last equation.</li>
+                <li>Click <b>"Solve System"</b> to calculate the solution.</li>
+                <li>The solution will show the nature (unique, infinite, or no solution) and the actual values.</li>
+                <li>For infinite solutions, the solution will show the relationship between variables.</li>
+                <li>Example: For equation <code>2x + 3y = 8</code>, enter 2, 3, and 8 in the input fields.</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>Linear Equations Solver &copy; 2023 | Solves systems of n linear equations with n variables</p>
+        </footer>
+    </div>
+
+    <script>
+        // Initialize with 2 equations
+        document.addEventListener('DOMContentLoaded', function() {
+            addEquation();
+            addEquation();
+        });
+        
+        // Get DOM elements
+        const equationInputs = document.getElementById('equationInputs');
+        const addEquationBtn = document.getElementById('addEquation');
+        const removeEquationBtn = document.getElementById('removeEquation');
+        const solveBtn = document.getElementById('solveBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const solutionContainer = document.getElementById('solutionContainer');
+        const solutionType = document.getElementById('solutionType');
+        const solutionsList = document.getElementById('solutionsList');
+        const noSolutionMessage = document.getElementById('noSolutionMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const errorText = document.getElementById('errorText');
+        
+        let equationCount = 0;
+        let variableCount = 2; // Start with 2 variables (x, y)
+        
+        // Add a new equation input row
+        function addEquation() {
+            equationCount++;
+            const equationRow = document.createElement('div');
+            equationRow.className = 'equation-row';
+            equationRow.id = `equation-${equationCount}`;
+            
+            let equationHTML = `<span>Equation ${equationCount}:</span>`;
+            
+            // Add input for each variable
+            for (let i = 0; i < variableCount; i++) {
+                const variableName = String.fromCharCode(97 + i); // a, b, c, ...
+                equationHTML += `
+                    <input type="number" class="equation-input coefficient" id="eq${equationCount}-var${i}" placeholder="0" step="any">
+                    <span class="variable">${variableName}</span>
+                    ${i < variableCount - 1 ? '<span>+</span>' : ''}
+                `;
+            }
+            
+            equationHTML += `
+                <span class="equals">=</span>
+                <input type="number" class="equation-input constant" id="eq${equationCount}-const" placeholder="0" step="any">
+            `;
+            
+            equationRow.innerHTML = equationHTML;
+            equationInputs.appendChild(equationRow);
+        }
+        
+        // Remove the last equation
+        function removeEquation() {
+            if (equationCount > 1) {
+                const lastEquation = document.getElementById(`equation-${equationCount}`);
+                equationInputs.removeChild(lastEquation);
+                equationCount--;
+            } else {
+                showError("You need at least one equation.");
+            }
+        }
+        
+        // Clear all equations and reset to 2
+        function clearAll() {
+            equationInputs.innerHTML = '';
+            equationCount = 0;
+            variableCount = 2;
+            addEquation();
+            addEquation();
+            hideSolution();
+            hideError();
+        }
+        
+        // Show error message
+        function showError(message) {
+            errorText.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+        
+        // Hide error message
+        function hideError() {
+            errorMessage.style.display = 'none';
+        }
+        
+        // Hide solution display
+        function hideSolution() {
+            solutionContainer.style.display = 'none';
+            noSolutionMessage.style.display = 'block';
+        }
+        
+        // Show solution display
+        function showSolution() {
+            solutionContainer.style.display = 'block';
+            noSolutionMessage.style.display = 'none';
+        }
+        
+        // Solve the system of equations
+        function solveEquations() {
+            hideError();
+            
+            // Get coefficients and constants
+            const coefficients = [];
+            const constants = [];
+            
+            for (let i = 1; i <= equationCount; i++) {
+                const rowCoefficients = [];
+                
+                for (let j = 0; j < variableCount; j++) {
+                    const input = document.getElementById(`eq${i}-var${j}`);
+                    const value = parseFloat(input.value) || 0;
+                    rowCoefficients.push(value);
+                }
+                
+                const constInput = document.getElementById(`eq${i}-const`);
+                const constValue = parseFloat(constInput.value) || 0;
+                
+                coefficients.push(rowCoefficients);
+                constants.push(constValue);
+            }
+            
+            // Check if we have enough equations
+            if (equationCount < variableCount) {
+                showError(`Warning: You have more variables (${variableCount}) than equations (${equationCount}). The system may have infinite solutions.`);
+            }
+            
+            // Solve using Gaussian elimination
+            const solution = gaussianElimination(coefficients, constants);
+            
+            // Display the solution
+            displaySolution(solution);
+        }
+        
+        // Gaussian elimination algorithm
+        function gaussianElimination(A, b) {
+            const n = A.length;
+            
+            // Create augmented matrix
+            const augmented = A.map((row, i) => [...row, b[i]]);
+            
+            // Forward elimination
+            for (let i = 0; i < n; i++) {
+                // Find pivot
+                let maxRow = i;
+                for (let j = i + 1; j < n; j++) {
+                    if (Math.abs(augmented[j][i]) > Math.abs(augmented[maxRow][i])) {
+                        maxRow = j;
+                    }
+                }
+                
+                // Swap rows
+                [augmented[i], augmented[maxRow]] = [augmented[maxRow], augmented[i]];
+                
+                // Check if matrix is singular
+                if (Math.abs(augmented[i][i]) < 1e-10) {
+                    continue;
+                }
+                
+                // Eliminate below
+                for (let j = i + 1; j < n; j++) {
+                    const factor = augmented[j][i] / augmented[i][i];
+                    for (let k = i; k <= n; k++) {
+                        augmented[j][k] -= factor * augmented[i][k];
+                    }
+                }
+            }
+            
+            // Back substitution
+            const x = new Array(n).fill(0);
+            for (let i = n - 1; i >= 0; i--) {
+                if (Math.abs(augmented[i][i]) < 1e-10) {
+                    // Check for inconsistency
+                    if (Math.abs(augmented[i][n]) > 1e-10) {
+                        return { type: 'no-solution', values: null };
+                    } else {
+                        return { type: 'infinite-solutions', values: null };
+                    }
+                }
+                
+                x[i] = augmented[i][n] / augmented[i][i];
+                for (let j = i - 1; j >= 0; j--) {
+                    augmented[j][n] -= augmented[j][i] * x[i];
+                }
+            }
+            
+            return { type: 'unique-solution', values: x };
+        }
+        
+        // Display the solution
+        function displaySolution(solution) {
+            showSolution();
+            
+            // Set solution type
+            if (solution.type === 'unique-solution') {
+                solutionType.className = 'solution-type unique-solution';
+                solutionType.innerHTML = '<i class="fas fa-check-circle"></i> Unique Solution';
+                
+                // Display variable values
+                solutionsList.innerHTML = '';
+                for (let i = 0; i < solution.values.length; i++) {
+                    const variableName = String.fromCharCode(97 + i); // a, b, c, ...
+                    const value = solution.values[i].toFixed(4);
+                    
+                    const solutionItem = document.createElement('div');
+                    solutionItem.className = 'solution-item';
+                    solutionItem.innerHTML = `
+                        <span class="variable">${variableName}</span>
+                        <span>=</span>
+                        <span>${value}</span>
+                    `;
+                    
+                    solutionsList.appendChild(solutionItem);
+                }
+            } 
+            else if (solution.type === 'infinite-solutions') {
+                solutionType.className = 'solution-type infinite-solutions';
+                solutionType.innerHTML = '<i class="fas fa-infinity"></i> Infinite Solutions';
+                
+                solutionsList.innerHTML = `
+                    <div class="solution-item">
+                        The system has infinitely many solutions. Variables are dependent.
+                    </div>
+                    <div class="solution-item">
+                        This means there are more variables than independent equations.
+                    </div>
+                `;
+            } 
+            else {
+                solutionType.className = 'solution-type no-solution';
+                solutionType.innerHTML = '<i class="fas fa-times-circle"></i> No Solution';
+                
+                solutionsList.innerHTML = `
+                    <div class="solution-item">
+                        The system has no solution. Equations are inconsistent.
+                    </div>
+                    <div class="solution-item">
+                        This means the equations represent parallel lines/planes that don't intersect.
+                    </div>
+                `;
+            }
+        }
+        
+        // Event listeners
+        addEquationBtn.addEventListener('click', addEquation);
+        removeEquationBtn.addEventListener('click', removeEquation);
+        solveBtn.addEventListener('click', solveEquations);
+        clearBtn.addEventListener('click', clearAll);
+        
+        // Allow Enter key to solve equations
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && (e.target.classList.contains('coefficient') || e.target.classList.contains('constant'))) {
+                solveEquations();
+            }
+        });
+        
+        // Add some example equations for demonstration
+        function addExample() {
+            clearAll();
+            
+            // Example: 2x + 3y = 8, 4x - y = 2
+            document.getElementById('eq1-var0').value = 2;
+            document.getElementById('eq1-var1').value = 3;
+            document.getElementById('eq1-const').value = 8;
+            
+            document.getElementById('eq2-var0').value = 4;
+            document.getElementById('eq2-var1').value = -1;
+            document.getElementById('eq2-const').value = 2;
+        }
+        
+        // Add example equations after a short delay
+        setTimeout(addExample, 500);
+    </script>
+</body>
+</html>
